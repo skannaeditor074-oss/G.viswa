@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10131d">
+<title>CHAMBO AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="logo">C</div>
+            <div>
+                <h2>CHAMBO AI</h2>
+                <small>YOUR AI SPACE</small>
+            </div>
+        </div>
+
+        <button class="new-chat" onclick="newChat()">
+            + New Chat
+        </button>
+
+        <div class="side-title">YOUR ASSISTANT</div>
+
+        <div class="side-info">
+            <span class="dot"></span>
+            <span id="connectionStatus">Checking connection...</span>
+        </div>
+
+        <div class="side-bottom">
+            Created with CHAMBO AI
+        </div>
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+            <button class="menu" onclick="toggleMenu()">☰</button>
+            <h3>CHAMBO <span>AI</span></h3>
+            <div class="online">● AI ASSISTANT</div>
+        </header>
+
+
+        <section class="chat-area" id="chatArea">
+
+            <div class="welcome" id="welcome">
+
+                <div class="welcome-logo">C</div>
+
+                <p class="welcome-small">
+                    WELCOME TO YOUR AI SPACE
+                </p>
+
+                <h1>
+                    What can I help<br>
+                    <span>you with today?</span>
+                </h1>
+
+                <p class="description">
+                    Ask anything. Explore ideas. Learn something new.
+                </p>
+
+                <div class="suggestions">
+
+                    <button onclick="useSuggestion('Explain a topic in simple Tamil')">
+                        ✦ Learn Something
+                    </button>
+
+                    <button onclick="useSuggestion('Give me a computer science project idea')">
+                        💻 Build a Project
+                    </button>
+
+                    <button onclick="useSuggestion('Help me improve my English')">
+                        ✎ Improve Skills
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="messages" class="messages"></div>
+
+        </section>
+
+
+        <footer class="footer">
+
+            <form id="chatForm">
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Message CHAMBO AI..."
+                    rows="1"
+                    required>
+                </textarea>
+
+                <button type="submit" id="sendButton">
+                    ↑
+                </button>
+
+            </form>
+
+            <p>
+                CHAMBO AI can make mistakes. Check important information.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
